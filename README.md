@@ -2,9 +2,7 @@
 
 > **"Your Digital Companion for Safety, Justice, and Empowerment."**
 
-![Saheli Banner](https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1000)
-
-**Saheli (Sakhi Ji)** is a cutting-edge mobile application engineered to provide holistic safety and empowerment solutions for women. It bridges the gap between immediate physical safety, legal awareness, and protection against digital threats like deepfakes.
+**Saheli** is a cutting-edge mobile application engineered to provide holistic safety and empowerment solutions for women. It bridges the gap between immediate physical safety, legal awareness, and protection against digital threats like deepfakes.
 
 ---
 
