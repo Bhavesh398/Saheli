@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CyberDojo Design System - Ninja-themed Cyber Safety Platform */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    /* Ninja Theme Colors */
+    --primary: 270 91% 65%; /* Cyber Purple */
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 285 85% 75%;
+    
+    --secondary: 180 84% 60%; /* Teal Accent */
+    --secondary-foreground: 220 13% 9%;
+    --secondary-glow: 185 89% 70%;
+    
+    /* Safety Colors */
+    --safe: 142 76% 36%; /* Safe Green */
+    --warning: 38 92% 50%; /* Warning Orange */
+    --danger: 0 84% 60%; /* Alert Red */
+    --danger-foreground: 210 40% 98%;
+    
+    /* Surface Colors */
+    --card: 240 6% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 6% 10%;
+    --popover-foreground: 0 0% 95%;
+    
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
+    
+    --accent: 240 6% 15%;
+    --accent-foreground: 0 0% 95%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 6% 20%;
+    --input: 240 6% 15%;
+    --ring: 270 91% 65%;
+    
+    /* Ninja Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
+    --gradient-ninja: linear-gradient(135deg, hsl(240 6% 10%), hsl(240 10% 3.9%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-glass: linear-gradient(135deg, hsla(var(--card), 0.7), hsla(var(--muted), 0.3));
+    
+    /* Shadows & Effects */
+    --shadow-ninja: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+    --shadow-card: 0 8px 32px hsla(0, 0%, 0%, 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Anime-style effects */
+    --glow-intensity: 0 0 30px hsl(var(--primary) / 0.5);
+    --particle-glow: 0 0 20px hsl(var(--accent) / 0.8);
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  /* Ninja Animations */
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Interactive Elements */
+  .ninja-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 rounded-lg p-6;
+    background: var(--gradient-glass);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+  
+  .ninja-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .ninja-button {
+    @apply relative overflow-hidden;
+    background: var(--gradient-primary);
+    transition: var(--transition-bounce);
+  }
+  
+  .ninja-button:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-ninja);
+  }
+  
+  .ninja-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* SOS Guardian Button */
+  .sos-button {
+    @apply fixed bottom-6 right-6 z-50;
+    background: var(--gradient-hero);
+    box-shadow: var(--shadow-glow);
+    animation: pulse 2s infinite;
+  }
+  
+  .sos-button:hover {
+    animation: none;
+    transform: scale(1.1);
+  }
+  
+  /* Progress Elements */
+  .ninja-progress {
+    @apply relative overflow-hidden rounded-full;
+    background: hsl(var(--muted));
+  }
+  
+  .ninja-progress-bar {
+    background: var(--gradient-primary);
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Glass Effects */
+  .glass-effect {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsla(var(--border), 0.3);
+  }
+}
+
+@layer utilities {
+  .text-ninja-glow {
+    text-shadow: 0 0 20px hsl(var(--primary-glow) / 0.5);
+  }
+  
+  .bg-ninja-gradient {
+    background: var(--gradient-ninja);
+  }
+  
+  .bg-hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-glass {
+    background: var(--gradient-glass);
+  }
+}
+
+/* Keyframes */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+  to {
+    text-shadow: 0 0 30px hsl(var(--primary-glow) / 0.8);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
